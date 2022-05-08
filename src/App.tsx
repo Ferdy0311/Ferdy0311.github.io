@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import AboutPage from './pages/AboutPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto p-6">
+      <div className="text-center text-3xl text-black font-bold">Ferdy Personal Website</div>
+      <div className="header flex mt-10 border-2 border-solid border-black">
+        <Link className="flex-1" to="/">
+          <nav className="
+            text-center no-underline 
+            text-black
+            font-bold
+            hover:bg-black hover:text-white
+            hover:transition-all delay-0 duration-300
+            p-6">
+              About
+          </nav>
+        </Link>
+        <Link className="flex-1" to="/portofolio">
+          <nav className="
+            text-center no-underline 
+            text-black
+            font-bold
+            hover:bg-black hover:text-white
+            hover:transition-all delay-0 duration-300
+            p-6">
+              Portofolio
+          </nav>
+        </Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<AboutPage />}/>
+      </Routes>
     </div>
   );
 }
